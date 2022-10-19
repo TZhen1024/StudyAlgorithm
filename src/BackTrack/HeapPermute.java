@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class HeapPermute {
     static ArrayList<Integer> nums = new ArrayList<>();
     public static void main(String[] args) {
-        int n = 3;
+        int n = 2;
         for (int i = 0; i <= n; i++) {
             nums.add(i);
         }
-        heapPermute(3);
+        heapPermute(n);
     }
 
     public static void heapPermute(int n) {
