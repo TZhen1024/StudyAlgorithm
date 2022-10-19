@@ -16,6 +16,8 @@ public class Leetcode986 {
         MyIntArray.output(intervalIntersection(firstList2, secondList2));
         MyIntArray.output(intervalIntersection(firstList3, secondList3));
 
+
+
     }
 
     public static int[][] intervalIntersection(int[][] firstList, int[][] secondList) {
