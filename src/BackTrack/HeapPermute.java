@@ -2,6 +2,7 @@ package BackTrack;
 
 import java.util.ArrayList;
 
+// 1..n全排列
 public class HeapPermute {
     static ArrayList<Integer> nums = new ArrayList<>();
     public static void main(String[] args) {
