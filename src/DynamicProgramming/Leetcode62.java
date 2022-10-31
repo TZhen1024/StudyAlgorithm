@@ -10,6 +10,16 @@ public class Leetcode62 {
         这里写的动态规划的解法
         但看题解这题果然是数学题
         直接计算组合数C_{m + n - 2}^{m - 1}
+
+        class Solution {
+            public int uniquePaths(int m, int n) {
+                long ans = 1;
+                for (int x = n, y = 1; y < m; ++x, ++y) {
+                    ans = ans * x / y;  // C_{n - 1 + k}^{k}
+                }
+                return (int) ans;
+            }
+        }
      */
     public int uniquePaths(int m, int n) {
         // pathNum[i][j]记录从i，j到终点的路径数
