@@ -18,6 +18,20 @@ public class Leetcode55 {
            否则 dp[i] = dp[i + 1] | dp[i + 2] | ... | dp[i + nums[i]]
 
            有时候感觉dp像是带有最优思想的记忆化搜索
+
+           贪心解法：
+           public boolean canJump(int[] nums) {
+                // 看了题解，可以直接跳，维护一个能到达的最远位置
+                int furthest = 0;
+                for (int i = 0; i < nums.length; i++) {
+                    if (furthest < i) { // i不在目前能达到的范围内，所以不能继续往下跳了
+                        return false;
+                    }
+                    furthest = Math.max(furthest, i + nums[i]);
+                }
+                // 如果循环顺利结束，说明n - 1 <= furthest，最后一个下标能到达
+                return true;
+            }
         */
         int n = nums.length;
         boolean[] dp = new boolean[n];
@@ -38,6 +52,29 @@ public class Leetcode55 {
                     }
                 }
             }
+        }
+        return dp[0];
+    }
+
+    /*
+        跳跃游戏II
+        跳到最后一个位置的最小跳跃次数
+     */
+    public int jump(int[] nums) {
+        // 这题也是可以用贪心的方法解，这里我自己写的是dp，时间比较长
+        // 设dp[i]为从位置i跳到最后一个位置的最小跳跃数
+        // dp[i] = 1 + min {dp[i + k]} 1 <= k <= nums[i]
+
+        int n = nums.length;
+        int[] dp = new int[n];
+
+        dp[n - 1] = 0;
+        for (int i = n - 2; i >= 0; i--) {
+            dp[i] = dp[i + 1];
+            for (int k = 2; k <= nums[i] && i + k < n; k++) {
+                dp[i] = Math.min(dp[i], dp[i + k]);
+            }
+            dp[i] += 1;
         }
         return dp[0];
     }
