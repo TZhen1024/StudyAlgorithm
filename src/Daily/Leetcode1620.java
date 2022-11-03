@@ -1,7 +1,9 @@
 package Daily;
 
 import java.util.Arrays;
-
+/*
+    2022/11/02 Mid
+ */
 public class Leetcode1620 {
     public static void main(String[] args) {
         int[][] towers = new int[][]{
