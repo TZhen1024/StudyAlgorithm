@@ -53,6 +53,7 @@ public class minWeightTriangulation {
                 }
             }
         }
+        System.out.println(m[0][7]);
         return getT(v, 0, n - 1);
     }
 
