@@ -1,4 +1,4 @@
-package TwoPoniters;
+package TwoPionters;
 
 public class Leetcode977 {
     public static void main(String[] args) {

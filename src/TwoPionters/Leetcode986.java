@@ -1,4 +1,4 @@
-package TwoPoniters;
+package TwoPionters;
 
 import util.MyIntArray;
 

@@ -1,6 +1,4 @@
-package TwoPoniters;
-
-import java.util.Arrays;
+package TwoPionters;
 
 public class Leetcode209 {
     public static void main(String[] args) {

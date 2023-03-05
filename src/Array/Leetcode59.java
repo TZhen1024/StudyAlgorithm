@@ -1,7 +1,5 @@
 package Array;
 
-import TwoPoniters.Leetcode209;
-
 public class Leetcode59 {
     public static void main(String[] args) {
         Leetcode59 leetcode59 = new Leetcode59();
