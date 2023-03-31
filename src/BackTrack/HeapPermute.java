@@ -6,12 +6,11 @@ import java.util.ArrayList;
 public class HeapPermute {
     static ArrayList<Integer> nums = new ArrayList<>();
     public static void main(String[] args) {
-        int n = 4;
+        int n = 3;
         for (int i = 0; i <= n; i++) {
             nums.add(i);
         }
         heapPermute(n);
-        System.out.println(nums);
     }
 
     public static void heapPermute(int n) {

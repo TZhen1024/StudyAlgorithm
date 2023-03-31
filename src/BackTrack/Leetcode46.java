@@ -10,7 +10,8 @@ public class Leetcode46 {
 
     }
 
-    List<List<Integer>> res = new ArrayList<>();
+   /*
+   List<List<Integer>> res = new ArrayList<>();
     LinkedList<Integer> path = new LinkedList<>();
     public List<List<Integer>> permute(int[] nums) {
         boolean[] isVisited = new boolean[nums.length];
@@ -31,6 +32,34 @@ public class Leetcode46 {
                 path.removeLast();
                 isVisited[i] = false;
             }
+        }
+    }
+    */
+
+    List<List<Integer>> res = new ArrayList<>();
+    LinkedList<Integer> permutation = new LinkedList<>();
+
+    public List<List<Integer>> permute(int[] nums) {
+        boolean[] isVisited = new boolean[nums.length];
+        backTracking(nums, 0, isVisited);
+        return res;
+    }
+
+    public void backTracking(int[] nums, int length, boolean[] isVisited) {
+        if (length == nums.length) {
+            res.add(new ArrayList<>(permutation));
+            return;
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            if (!isVisited[i]) {
+                isVisited[i] = true;
+                permutation.add(nums[i]);
+                backTracking(nums, length + 1, isVisited);
+                isVisited[i] = false;
+                permutation.removeLast();
+            }
+
         }
     }
 }
