@@ -41,5 +41,6 @@ public class Leetcode47 {
             i++;
             while (i < nums.length && nums[i] == before) i++;
         }
+
     }
 }
