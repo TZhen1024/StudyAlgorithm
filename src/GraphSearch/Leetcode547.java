@@ -1,7 +1,5 @@
 package GraphSearch;
 
-import util.MyIntArray;
-
 public class Leetcode547 {
     public static void main(String[] args) {
         int[][] isConnected = new int[][] {

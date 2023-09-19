@@ -1,7 +1,6 @@
 package GraphSearch;
 
 import java.util.ArrayDeque;
-import java.util.Queue;
 
 public class Leetcode1091 {
     public static void main(String[] args) {
