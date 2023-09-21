@@ -1,16 +1,17 @@
 package BackTrack;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Leetcode22 {
     public static void main(String[] args) {
-        int n = 10;
+        int n = 3;
         Leetcode22 leetcode22 = new Leetcode22();
         System.out.println(leetcode22.generateParenthesis(n));
     }
 
-    List<String> res = new LinkedList<>();
+    /* List<String> res = new LinkedList<>();
     StringBuilder sb = new StringBuilder();
     public List<String> generateParenthesis(int n) {
         backTrack(n, n, 0);
@@ -44,5 +45,31 @@ public class Leetcode22 {
         sb.deleteCharAt(sb.length() - 1);
         l++;
         r--;
+    } */
+
+    ArrayList<String> res = new ArrayList<>();
+    StringBuilder sb = new StringBuilder();
+    public List<String> generateParenthesis(int n) {
+        backTrack(n, 0);
+        return res;
     }
+
+    public void backTrack(int l, int r) {
+        if (l == 0 && r == 0) {
+            res.add(sb.toString());
+            return;
+        }
+        
+        if (l != 0) { 
+            sb.append('(');
+            backTrack(l - 1, r + 1);
+            sb.deleteCharAt(sb.length() - 1);
+        }
+
+        if (r != 0) {
+            sb.append(')');
+            backTrack(l, r - 1);
+            sb.deleteCharAt(sb.length() - 1);
+        }
+    } 
 }
