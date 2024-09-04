@@ -1,7 +1,8 @@
-import util.MyIntArray;
+import java.util.*;
 
+// 注意类名必须为 Main, 不要有任何 package xxx 信息
 public class Main {
     public static void main(String[] args) {
-        MyIntArray.output(MyIntArray.getIntArray());
+        System.out.println("Hello Algorithm!");
     }
 }
